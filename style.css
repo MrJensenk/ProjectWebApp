@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {}
+
+.content {
+    flex: 1 1 auto
+}
+
+.header {}
+
+.container {
+    max-width: 100%;
+}
+
+.header__body {
+    background-color: rgba(191, 136, 236, 0.705);
+    padding: 15px 0;
+    min-height: 25px;
+}
+
+.navigation {}
+
+.navigation nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    color: black;
+    font-size: 15px;
+
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin: 5px 0px 5px 15px;
+}
+
+ul li a {
+    border: 1px solid black;
+    color: black;
+    transition: color 0.5s;
+    padding: 10px;
+    text-decoration: none;
+    background-color: rgba(89, 218, 235, 0.788);
+    box-shadow: 2px 2px 1px black;
+    border-radius: 3px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ul li a:hover {
+    color: aquamarine;
+
+}
+
+.goal__application {
+    margin: 0 auto;
+    display: table;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px;
+}
+
+.goal {
+    font-size: 20px;
+    background-color: rgba(89, 218, 235, 0.788);
+    color: black;
+}
+
+.checkbtn {
+    font-size: 30px;
+    display: none;
+    color: white;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .checkbtn {
+        display: block;
+        order: 1;
+        margin-right: 25px;
+    }
+
+    ul {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background-color: gray;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+    }
+
+    ul li {
+        margin: 20px 0;
+    }
+
+    ul li a {
+        font-size: 20px;
+    }
+
+    #check:checked~ul {
+        right: 0;
+    }
+}
+
+.main__table {
+    margin: 75px 0;
+}
+
+.table__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table__text {
+    margin: 0 0 20px 0;
+}
+
+.table__text input[type="text"] {
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 30px;
+    font-size: 20px;
+}
+
+
+.table__diagram {
+    margin-top: 20px;
+}
+
+.table__info {}
+
+#myChart {
+    max-width: 280px;
+}
