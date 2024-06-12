@@ -1,8 +1,12 @@
-h1,
-h2 {
+h1{
     margin-left: 15px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
+}
+h2{
+    margin-left: 15px;
+    font-style: oblique;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 label {
@@ -19,7 +23,12 @@ label {
     margin: 25px;
     padding: 15px;
 }
-
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .form-field .buttonRegister {
     transition-duration: 0.5s;
