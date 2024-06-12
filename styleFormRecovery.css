@@ -1,0 +1,52 @@
+p {
+    font-family: "Abel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.wrapper {
+    overflow: hidden;
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 50px 0;
+    border: 2px solid black;
+    padding: 30px;
+    border-radius: 7px;
+}
+
+.email {
+    display: flex;
+    margin: 10px auto;
+    width: 350px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.buttonSubmit {
+    display: flex;
+    transition-duration: 0.5s;
+    background-color: rgba(109, 236, 12, 0.295);
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 0 auto;
+    font-family: "Abel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-shadow: 2px 1px 1px rgb(56, 48, 48);
+}
+.buttonSubmit:hover {
+    color: midnightblue;
+    transform: scale(1.2);
+    transition: transform 0.5s;
+}
