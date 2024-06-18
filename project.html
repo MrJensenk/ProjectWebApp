@@ -8,8 +8,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Pacifico&display=swap"
         rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
     <title>Проект</title>
 </head>
 
@@ -25,17 +25,17 @@
                                 <label for="check" class="checkbtn">
                                     <i class="fas fa-bars"></i>
                                 </label>
-                                <ul>
-                                    <li><a class="active" href="#">Главная</a></li>
-                                    <li><a class="active" href="#">Настройки</a></li>
-                                    <li><a class="active" href="#">Функции</a></li>
+                                <ul class="nav_list">
+                                    <a class="nav_elem" href=""><span>Главная</span></a>
+                                    <a class="nav_elem" href=""><span>Настройки</span></a>
+                                    <a class="nav_elem" href=""><span>Функции</span></a>
                                 </ul>
                             </nav>
                         </div>
                         <div class="goal__application">
                             <select class="goal">
-                                <option>Доходы</option>
-                                <option>Расходы</option>
+                                <option><a href="">Доходы</a></option>
+                                <option><a href="">Расходы</a></option>
                             </select>
                         </div>
                     </div>
@@ -52,7 +52,13 @@
                             <script src="Диаграмма.js"></script>
                         </div>
                         <div class="table__info">
-
+                            <h4>Доходы по категориям</h4>
+                            <ul>
+                                <li><a href="">ЖКХ</a></li>
+                                <li><a href="">Развлечения</a></li>
+                                <li><a href="">Магазины</a></li>
+                            </ul>
+                            <input type="button" class="addButton" value="Добавить запись ">
                         </div>
                     </div>
                 </div>

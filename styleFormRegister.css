@@ -1,16 +1,17 @@
-h1{
+h1 {
     margin-left: 15px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
 }
-h2{
+
+h2 {
     margin-left: 15px;
     font-style: oblique;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 label {
-    display: table;
+    display: block;
     margin-bottom: 10px;
     font-size: 18px;
     font-family: "Abel", sans-serif;
@@ -18,36 +19,43 @@ label {
     font-style: normal;
 }
 
-
-.form-field {
-    margin: 25px;
-    padding: 15px;
-}
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.form-field .buttonRegister {
-    transition-duration: 0.5s;
-    background-color: rgba(109, 236, 12, 0.295);
-    font-size: 20px;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 10px;
-    font-family: "Abel", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    box-shadow: 2px 1px 1px rgb(56, 48, 48);
+.form-field {
+    margin: 25px;
+    padding: 15px;
 }
 
-.form-field .buttonRegister:hover {
-    color: midnightblue;
-    transform: scale(1.2);
-    transition: transform 0.5s;
+
+.form-field .buttonRegister {
+    border-right: none;
+    border-left: none;
+    display: block;
+    font-size: 24px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    border-radius: 40px;
+    letter-spacing: 2px;
+    transition: all .25s;
 }
+
+
+
+.buttonRegister:hover {
+    letter-spacing: 10px;
+}
+
+    
+
+
 
 .form-field input[type="text"],
 input[type="password"],
@@ -66,7 +74,9 @@ input[type="email"] {
     margin: 25px;
     padding: 15px;
     margin-top: -10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Abel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 @media (min-width:768px) {
@@ -75,7 +85,7 @@ input[type="email"] {
     input[type="password"],
     input[type="email"] {
         width: 400px;
-        min-height: 25px;
+        min-height: 40px;
     }
 
 }
@@ -86,7 +96,7 @@ input[type="email"] {
     input[type="password"],
     input[type="email"] {
         width: 280px;
-        min-height: 25px;
+        min-height: 40px;
     }
 
 }

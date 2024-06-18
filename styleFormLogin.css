@@ -22,6 +22,12 @@ label {
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.3);
 }
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .fieldAfterButton {
     font-size: 18px;
@@ -36,22 +42,22 @@ label {
     margin-left: 5px;
 }
  .buttonLogin {
-    transition-duration: 0.5s;
-    background-color: rgba(109, 236, 12, 0.295);
-    font-size: 20px;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 10px;
-    font-family: "Abel", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    box-shadow: 2px 1px 1px rgb(56, 48, 48);
+    border-right: none;
+    border-left: none;
+    display: block;
+    font-size: 24px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    border-radius: 40px;
+    letter-spacing: 2px;
+    transition: all .25s;
 }
 
 .buttonLogin:hover {
-    color: midnightblue;
-    transform: scale(1.2);
-    transition: transform 0.5s;
+    letter-spacing: 10px;
 }
 
 @media (min-width:768px) {
@@ -59,7 +65,7 @@ label {
     .login,
     .password {
         width: 400px;
-        min-height: 25px;
+        min-height: 40px;
     }
 
 }
@@ -69,7 +75,7 @@ label {
     .login,
     .password {
         width: 280px;
-        min-height: 25px;
+        min-height: 40px;
     }
 
 }

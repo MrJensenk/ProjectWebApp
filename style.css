@@ -17,7 +17,7 @@ body {
 }
 
 .header__body {
-    background-color: rgba(191, 136, 236, 0.705);
+    background-color: rgba(0,0,0,0.2);
     padding: 15px 0;
     min-height: 25px;
 }
@@ -34,34 +34,54 @@ body {
 
 }
 
-ul {
+.nav_list {
     display: flex;
+    position: static;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-ul li {
-    margin: 5px 0px 5px 15px;
-}
 
-ul li a {
-    border: 1px solid black;
-    color: black;
-    transition: color 0.5s;
-    padding: 10px;
+.nav_elem {
+    display: block;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    font-family: sans-serif;
     text-decoration: none;
-    background-color: rgba(89, 218, 235, 0.788);
-    box-shadow: 2px 2px 1px black;
-    border-radius: 3px;
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 5px 0px 5px 15px;
+    position: relative;
+    transition: all 0.4s;
 }
 
-ul li a:hover {
-    color: aquamarine;
+.nav_elem span {
+    position: relative;
+    z-index: 2;
+}
 
+.nav_elem::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all .35s;
+}
+
+
+.nav_elem:hover {
+    color: #fff;
+}
+.nav_elem:hover::after{
+    width: 100%;
 }
 
 .goal__application {
@@ -74,8 +94,8 @@ ul li a:hover {
 
 .goal {
     font-size: 20px;
-    background-color: rgba(89, 218, 235, 0.788);
-    color: black;
+    background-color: #333;
+    color: #fff;
 }
 
 .checkbtn {
@@ -89,39 +109,6 @@ ul li a:hover {
     display: none;
 }
 
-@media(max-width: 768px) {
-    .checkbtn {
-        display: block;
-        order: 1;
-        margin-right: 25px;
-    }
-
-    ul {
-        position: fixed;
-        top: 80px;
-        right: -100%;
-        background-color: gray;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s;
-    }
-
-    ul li {
-        margin: 20px 0;
-    }
-
-    ul li a {
-        font-size: 20px;
-    }
-
-    #check:checked~ul {
-        right: 0;
-    }
-}
 
 .main__table {
     margin: 75px 0;
@@ -150,7 +137,52 @@ ul li a:hover {
     margin-top: 20px;
 }
 
-.table__info {}
+.table__info {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.table__info ul {
+    list-style: none;
+    margin-bottom: 22px;
+    padding: 0 150px;
+}
+
+.table__info h4 {
+    text-align: center;
+}
+
+.table__info a {
+    text-decoration: none;
+
+}
+
+.table__info a:visited {
+    color: black;
+}
+
+.table__info a:hover {}
+
+.table__info li {
+    margin: 10px;
+    padding: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    text-align: center;
+
+
+}
+
+.table__info .addButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 
 #myChart {
     max-width: 280px;
