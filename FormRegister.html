@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <title>Форма для регистрации</title>
 </head>
 
@@ -56,10 +57,11 @@
                 <p class="postScript">Уже есть созданный аккаунт? <a
                         href="D:\Обучение frontend\Работа с макетами\Проект общий\Формы\FormLogin.html">Войти</a></p>
             </div>
+            <p class="result" style="color:#fff"></p>
         </form>
         <script>
             function sendJSONRegister() {
-                let login = document.querySelector(".login");
+                let username = document.querySelector(".login");
                 let password = document.querySelector(".password");
                 let email = document.querySelector(".email");
                 let name = document.querySelector(".name");
@@ -68,13 +70,21 @@
                 let dataOfBirth = document.querySelector(".dataOfBirth");
                 let phoneNumber = document.querySelector(".phoneNumber");
 
+                let result = document.querySelector(".result");
                 let xhr = XMLHttpRequest();
                 let url;
 
                 xhr.open("POST", url, true);
                 xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.onreadystatechange = function () {
+                    // если запрос принят и сервер ответил, что всё в порядке
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // выводим то, что ответил нам сервер — так мы убедимся, что данные он получил правильно
+                        result.innerHTML = this.responseText;
+                    }
+                };
 
-                var data = JSON.stringify({ "login": login.value, "password": password.value, "email": email.value, "name": name.value, "surname": surname.value, "lastname": lastname.value, "dataOfBirth": dataOfBirth.value, "phoneNumber": phoneNumber.value });
+                var data = JSON.stringify({ "username": username.value, "password": password.value, "email": email.value, "name": name.value, "surname": surname.value, "lastname": lastname.value, "dataOfBirth": dataOfBirth.value, "phoneNumber": phoneNumber.value });
                 xhr.send(data);
 
             }
