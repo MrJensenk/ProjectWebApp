@@ -53,18 +53,35 @@
                         </div>
                         <div class="table__info">
                             <h4>Доходы по категориям</h4>
-                            <ul>
+                            <ul class="category_list">
                                 <li><a href="">ЖКХ</a></li>
                                 <li><a href="">Развлечения</a></li>
                                 <li><a href="">Магазины</a></li>
+
                             </ul>
-                            <input type="button" class="addButton" value="Добавить запись ">
+                            <input type="button" class="addButton" value="Добавить запись" onclick="addBlock()">
+                            <input type="button" class="delButton" value="Удалить запись" onclick="deleteBlock(item)">
+                            <input type="button" class="setButton" value="Изменить запись" onclick="setBlock()">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        var x = 0;
+        function addBlock() {
+
+            var categ_elem = document.getElementsByTagName("ul")[1];
+            var li = document.createElement("input");
+            li.setAttribute("type", "text");
+            li.setAttribute("placeholder", "Введите категорию");
+            li.setAttribute("class", "input_category" + x);
+            document.getElementsByClassName("input_category" + x).innerHTML = li;
+            x++;
+            categ_elem.appendChild(li);
+        }
+    </script>
 </body>
 
 </html>

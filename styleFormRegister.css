@@ -2,6 +2,7 @@ h1 {
     margin-left: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
+    text-align: center;
 }
 
 h2 {
@@ -19,18 +20,32 @@ label {
     font-style: normal;
 }
 
+label::after {
+    content: '*';
+    color: red;
+}
+
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-image: radial-gradient(circle at 30% 86%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 55% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 40% 75%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 7% 99%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 69% 76%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 2% 35%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 14% 48%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 65% 14%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 51% 36%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 6% 93%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), linear-gradient(135deg, rgb(23, 233, 173), rgb(29, 24, 208));
+    height: 100%;
 }
 
 .form-field {
     margin: 25px;
     padding: 15px;
+    
 }
 
+    
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .form-field .buttonRegister {
     border-right: none;
@@ -53,7 +68,7 @@ label {
     letter-spacing: 10px;
 }
 
-    
+
 
 
 
@@ -62,11 +77,23 @@ input[type="password"],
 input[type="email"] {
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.3);
+    transition: border 0.3s;
 }
+.form-field input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover{
+    border-color:rgba(91, 230, 137, 0.836);
+    box-shadow: 1px 1px 3px #fff;
+    transition: all 0.3s;
+}
+
 
 .postScript a {
     text-decoration: none;
     margin-left: 5px;
+}
+.postScript a:visited{
+    color:#fff;
 }
 
 .postScript {
@@ -77,6 +104,7 @@ input[type="email"] {
     font-family: "Abel", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color:#fff;
 }
 
 @media (min-width:768px) {
