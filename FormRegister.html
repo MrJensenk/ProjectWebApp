@@ -15,7 +15,6 @@
 
 <body>
     <div class="wrapper">
-        <form class="form" action="" method="post">
             <h1>Регистрация пользователя</h1>
             <h2>Заполните все поля, чтобы зарегистровать аккаунт</h2>
             <div class="form-field">
@@ -44,7 +43,7 @@
             </div>
             <div class="form-field">
                 <label>Дата рождения</label><br>
-                <input type="text" class="dataOfBirth" placeholder="Пример, 03/02/1999" required>
+                <input type="text" class="dateOfBirth" placeholder="Пример, 2004-04-22" required>
             </div>
             <div class="form-field">
                 <label>Номер телефона</label><br>
@@ -58,34 +57,29 @@
                         href="D:\Обучение frontend\Работа с макетами\Проект общий\Формы\FormLogin.html">Войти</a></p>
             </div>
             <p class="result" style="color:#fff"></p>
-        </form>
         <script>
-            function sendJSONRegister() {
+            async function sendJSONRegister() {
                 let username = document.querySelector(".login");
                 let password = document.querySelector(".password");
                 let email = document.querySelector(".email");
                 let name = document.querySelector(".name");
                 let surname = document.querySelector(".surname");
                 let lastname = document.querySelector(".lastname");
-                let dataOfBirth = document.querySelector(".dataOfBirth");
+                let dateOfBirth = document.querySelector(".dateOfBirth");
                 let phoneNumber = document.querySelector(".phoneNumber");
 
-                let result = document.querySelector(".result");
-                let xhr = XMLHttpRequest();
-                let url;
 
-                xhr.open("POST", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.onreadystatechange = function () {
-                    // если запрос принят и сервер ответил, что всё в порядке
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        // выводим то, что ответил нам сервер — так мы убедимся, что данные он получил правильно
-                        result.innerHTML = this.responseText;
+                var data = JSON.stringify({ "username": username.value, "password": password.value, "email": email.value, "name": name.value, "surname": surname.value, "lastname": lastname.value, "dateOfBirth": dateOfBirth.value, "phoneNumber": phoneNumber.value });
+                let response = await fetch(
+                    'http://localhost:8080/auth/register',
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: data
                     }
-                };
+                );
 
-                var data = JSON.stringify({ "username": username.value, "password": password.value, "email": email.value, "name": name.value, "surname": surname.value, "lastname": lastname.value, "dataOfBirth": dataOfBirth.value, "phoneNumber": phoneNumber.value });
-                xhr.send(data);
+                let json = await response.json();
 
             }
         </script>
