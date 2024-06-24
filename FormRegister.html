@@ -81,6 +81,11 @@
 
                 let json = await response.json();
 
+                if (response.status >= 400) {
+                    alert(json["message"]);
+                } else if (response.status == 200) {
+                    window.location.replace("FormLogin.html");
+                }
             }
         </script>
     </div>

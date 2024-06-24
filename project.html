@@ -10,6 +10,9 @@
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+    <script src="auth.js"></script>
+    <script type="module" src="profile.js"></script>
+    <script type="module" src="Диаграмма.js"></script>
     <title>Проект</title>
 </head>
 
@@ -41,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="main__table">
+            <div class="main__table" id="dsj">
                 <div class="container">
                     <div class="table__row">
                         <div class="table__text">
@@ -49,15 +52,10 @@
                         </div>
                         <div class="table__diagram">
                             <canvas id="myChart" width="220" height="220"></canvas>
-                            <script src="Диаграмма.js"></script>
                         </div>
                         <div class="table__info">
                             <h4>Доходы по категориям</h4>
-                            <ul class="category_list">
-                                <li><a href="">ЖКХ</a></li>
-                                <li><a href="">Развлечения</a></li>
-                                <li><a href="">Магазины</a></li>
-
+                            <ul class="category_list" id="categories">
                             </ul>
                             <input type="button" class="addButton" value="Добавить запись" onclick="addBlock()">
                             <input type="button" class="delButton" value="Удалить запись" onclick="deleteBlock(item)">

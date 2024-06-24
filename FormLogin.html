@@ -34,19 +34,16 @@
             <input type="submit" class="buttonLogin" value="Sign up" onclick="sendJSONLogin()">
         </div>
         <div class="fieldAfterButton">
-            <p>Еще не зарегистрировались? <a
-                    href="D:\Обучение frontend\Работа с макетами\Проект общий\Формы\FormRegister.html">Регистрация</a>
-            </p>
-            <p><a href="D:\Обучение frontend\Работа с макетами\Проект общий\Формы\FormRecovery.html">Забыли
-                    пароль?</a></p>
+            <p>Еще не зарегистрировались? <a href="FormRegister.html">Регистрация</a></p>
+            <p><a href="FormRecovery.html">Забыли пароль?</a></p>
         </div>
         <script>
             async function sendJSONLogin() {
                 let username = document.querySelector(".login");
                 let password = document.querySelector(".password");
 
-                var data = JSON.stringify({ "login": username.value, "password": password.value });
-                let response = await fetch('http://localhost:8080/auth/register',
+                var data = JSON.stringify({ "username": username.value, "password": password.value });
+                let response = await fetch('http://localhost:8080/auth/login',
                     {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -56,7 +53,16 @@
 
                 let json = await response.json();
 
+                if (response.status == 401) {
+                    alert(json["message"]);
+                }
 
+                if (response.status == 200) {
+                    localStorage.setItem("jwt-token", json["jwt-token"]);
+                    console.log(localStorage.getItem("jwt-token"));
+
+                    window.location.replace("project.html");
+                }
             }
         </script>
     </div>
