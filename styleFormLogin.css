@@ -1,35 +1,26 @@
 h1 {
     margin: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
 }
 
-
-
-label {
-    display: table;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-family: "Abel", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+body {
+    background-image: url("Fizzy Group.jpg");
 }
 
-label::after {
-    content: "*";
-    color: red;
-}
 
 .form-field {
-    margin: 25px;
-    padding: 10px;
+    margin: 15px;
 }
 
 .login,
 .password {
-    border-radius: 5px;
-    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
     transition: border 0.3s;
+    background: #F0FFEA;
 }
 
 .login:hover,
@@ -41,17 +32,35 @@ label::after {
 }
 
 .wrapper {
+    width: 100vw;
     height: 100vh;
-    background-image: radial-gradient(circle at 30% 86%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 55% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 40% 75%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 7% 99%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 69% 76%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 2% 35%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 14% 48%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 65% 14%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 51% 36%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 6% 93%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), linear-gradient(135deg, rgb(23, 233, 173), rgb(29, 24, 208));
+    overflow: hidden;
+}
+
+.container {
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 100px;
+}
+
+.form-login {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #E6FFDC;
+    border-radius: 20px;
+    width: 430px;
+    height: 630px;
 }
+
 
 .fieldAfterButton {
     font-size: 18px;
-    color:#fff;
+    color: #333;
     margin: 25px;
     padding: 15px;
     margin-top: -10px;
@@ -63,46 +72,42 @@ label::after {
     margin-left: 5px;
 }
 
-.fieldAfterButton a:visited {
-    color: #fff;
-}
-
 .buttonLogin {
-    border-right: none;
-    border-left: none;
-    display: block;
-    font-size: 24px;
+    display: table;
+    font-size: 20px;
+    line-height: 24px;
+    height: 52px;
+    width: 300px;
     font-family: sans-serif;
     text-decoration: none;
+    background: #BADBAD;
     color: #333;
-    border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
-    border-radius: 40px;
+    border: 1px solid #00000033;
+    border-radius: 20px;
     letter-spacing: 2px;
     transition: all .25s;
+    margin-top: 50px;
 
 }
 
 .buttonLogin:hover {
-    letter-spacing: 10px;
+    letter-spacing: 5px;
 }
 
 @media (min-width:768px) {
-
     .login,
     .password {
-        width: 400px;
-        min-height: 40px;
+        width: 300px;
+        min-height: 52px;
     }
 
 }
 
 @media (max-width: 768px) {
-
     .login,
     .password {
-        width: 280px;
-        min-height: 40px;
+        width: 250px;
+        min-height: 52px;
     }
 
 }
