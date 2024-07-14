@@ -15,48 +15,51 @@
 
 <body>
     <div class="wrapper">
-            <h1>Регистрация пользователя</h1>
-            <h2>Заполните все поля, чтобы зарегистровать аккаунт</h2>
-            <div class="form-field">
-                <label>Логин</label><br>
-                <input type="text" class="login" placeholder="Пример, MrJensen" , maxlength="100" required>
+        <div class="container">
+            <div class="form-register">
+                <h1>Registration</h1>
+                <div class="form-field">
+                    <!--<label>Логин</label><br> -->
+                    <input type="text" class="login" placeholder="Login" , maxlength="100" required>
+                </div>
+                <div class="form-field">
+                    <!--<label>Пароль</label><br>-->
+                    <input type="password" class="password" required placeholder="Password">
+                </div>
+                <div class="form-field">
+                    <!--<label>Электронная почта</label><br>-->
+                    <input type="email" class="email" placeholder="Email" required>
+                </div>
+                <div class="form-field">
+                    <!--<label>Имя</label><br>-->
+                    <input type="text" class="name" required placeholder="Name">
+                </div>
+                <div class="form-field">
+                   <!--<label>Фамилия</label><br>-->
+                    <input type="text" class="surname" required placeholder="Surname"> 
+                </div>
+                <div class="form-field">
+                    <!--<label>Отчество</label><br>-->
+                    <input type="text" class="lastname" required placeholder="Lastname">
+                </div>
+                <div class="form-field">
+                    <!--<label>Дата рождения</label><br>-->
+                    <input type="text" class="dateOfBirth" placeholder="DateOfBirth" required>
+                </div>
+                <div class="form-field">
+                    <!--<label>Номер телефона</label><br>-->
+                    <input type="text" class="phoneNumber" placeholder="PhoneNumber" required>
+                </div>
+                <div class="form-field">
+                    <input type="submit" class="buttonRegister" value="Sign in" onclick="sendJSONRegister()">
+                </div>
+                <div class="fieldAfterButton">
+                    <p class="postScript">Уже есть созданный аккаунт? <a href="FormLogin.html">Войти</a></p>
+                </div>
+                <p class="result" style="color:#fff"></p>
             </div>
-            <div class="form-field">
-                <label>Пароль</label><br>
-                <input type="password" class="password" required>
-            </div>
-            <div class="form-field">
-                <label>Электронная почта</label><br>
-                <input type="email" class="email" placeholder="Пример, rgueg@mail.ru" required>
-            </div>
-            <div class="form-field">
-                <label>Имя</label><br>
-                <input type="text" class="name" required>
-            </div>
-            <div class="form-field">
-                <label>Фамилия</label><br>
-                <input type="text" class="surname" required>
-            </div>
-            <div class="form-field">
-                <label>Отчество</label><br>
-                <input type="text" class="lastname" required>
-            </div>
-            <div class="form-field">
-                <label>Дата рождения</label><br>
-                <input type="text" class="dateOfBirth" placeholder="Пример, 2004-04-22" required>
-            </div>
-            <div class="form-field">
-                <label>Номер телефона</label><br>
-                <input type="text" class="phoneNumber" placeholder="Формат: +79547474589" required>
-            </div>
-            <div class="form-field">
-                <input type="submit" class="buttonRegister" value="Sign in" onclick="sendJSONRegister()">
-            </div>
-            <div class="fieldAfterButton">
-                <p class="postScript">Уже есть созданный аккаунт? <a
-                        href="FormLogin.html">Войти</a></p>
-            </div>
-            <p class="result" style="color:#fff"></p>
+        </div>
+
         <script>
             async function sendJSONRegister() {
                 let username = document.querySelector(".login");
